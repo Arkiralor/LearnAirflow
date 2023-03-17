@@ -21,8 +21,10 @@ This is the part where we set up the python development environment.
 3. `python -m pip install pip-tools` to install setup tools for the next step.
 4. `pip-compile` to generate a platform-dependent list of dependencies.
 5. `python -m pip install -r requirements.txt` to install all the required dependencies.
-6. `sh install_airflow.sh` to install the pip-version of `airflow`
+6. `chmod +x install_airflow.sh` to permit the mention shell-script to execute.
+7. `sh install_airflow.sh` to install the pip-version of `airflow`
    1. Stricly speaking, this step is absolutely not necessary, but makes code completion in an IDE possible and does not hamper the actual airflow DAGs.
+   2. If the script cannot connect for some reason run the following command directly: `python -m pip install "apache-airflow[celery]==2.5.2" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.2/constraints-3.9.txt"`.
 
 ### Docker Setup
 
